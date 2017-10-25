@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sample03</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container" id="app">
+
+    <!-- section one -->
+    <div class="row" style="margin-top: 20px">
+        <form action="done.html" method="post" @submit.prevent="showAlert">
+            <button type="submit" class="btn btn-primary">Show Alert</button>
+        </form>
+    </div>
+
+    <!-- section two -->
+    <div class="row" style="margin-top: 20px">
+        <button class="btn btn-success" @click="count += 1">Add {{ count}}</button>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="sample03.js"></script>
+</body>
+</html>
