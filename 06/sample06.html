@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sample06</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+    Directives:
+
+    v-text
+    v-html
+    v-if
+    v-else
+    v-else-if
+    v-for
+    v-bind === :
+    v-model
+    v-on === @
+    v-pre
+    v-cloak
+    v-once
+
+-->
+
+<div class="container" id="app">
+
+    <!-- section v-text -->
+    <div class="row">
+        <h4 v-text="text_message"></h4>
+    </div>
+
+    <!-- section v-html -->
+    <div class="row">
+        <h4 v-html="html_message"></h4>
+    </div>
+
+    <!-- section v-if and else-if -->
+    <div class="row">
+        <h4 v-if="clause == 1" v-html="clause" style="color: red"></h4>
+        <h4 v-else-if="clause == 2" v-html="clause" style="color: green"></h4>
+        <h4 v-else="clause" style="color: blue">Another Number</h4>
+    </div>
+
+    <!-- section v-for -->
+    <div class="row">
+        <ul class="lead">
+            <li v-for="name in names">{{ name }}</li>
+        </ul>
+    </div>
+
+    <!-- section v-bind -->
+    <div class="row">
+        <a :href="url" :title="title">Google</a>
+    </div>
+
+    <!-- section v-pre -->
+    <div class="row">
+        <h4 v-pre="pre">{{ pre }}</h4>
+    </div>
+
+    <!-- section v-once -->
+    <div class="row">
+        <h4 v-once="once">{{ once }}</h4>
+    </div>
+
+    <!-- section v-on -->
+    <div class="row col-md-2">
+        <h4 v-html="text_toggle"></h4>
+        <button class="btn btn-info form-control" @click="press">Press</button>
+    </div>
+
+    <!-- section v-cloak -->
+    <div class="row">
+        <h4 v-cloak>{{ my_name }}</h4>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="sample06.js"></script>
+</body>
+</html>
