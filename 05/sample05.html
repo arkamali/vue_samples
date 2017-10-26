@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sample05</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container" id="app">
+
+    <div class="col-md-6">
+
+        <!-- section define level -->
+        <div class="row">
+            <h1>
+               Level : {{ skill }}
+            </h1>
+            <input type="number" v-model="point" class="form-control">
+        </div>
+
+        <!-- section change name -->
+        <hr>
+        <div class="row">
+            <h1>{{ fullname}}</h1>
+            <input class="form-control" v-model="first">
+            <input class="form-control" v-model="last">
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="sample05.js"></script>
+</body>
+</html>
