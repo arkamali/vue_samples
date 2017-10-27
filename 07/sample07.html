@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sample07</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style>
+        .completed{
+            text-decoration: line-through
+        }
+        .pointer {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="app">
+    <div class="row">
+        <ul class="list-group">
+
+            <!------------------------------ we can use one of these for dynamic append class------------------------->
+            <!--:class="[task.done ? 'completed' : '' ,'list-group-item']"-->
+            <!--:class="[{'completed' : task.done},'list-group-item']"-->
+
+            <li v-for="task in tasks" :class="[task.done ? 'completed' : '' ,'list-group-item', 'pointer']" @click="task.done = ! task.done">{{ task.body }}</li>
+
+        </ul>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="sample07.js"></script>
+</body>
+</html>
