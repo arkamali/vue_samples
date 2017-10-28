@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sample09</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container" id="app">
+    <message title="Hello VueJs !!!" body="this is a body." type="alert-success"></message>
+</div>
+
+<template id="message-alert">
+    <div :class="['alert', type, 'alert-dismissible']" v-show="visible">
+        <strong>{{ title }}</strong> {{ body }}
+        <button type="button" class="close" aria-label="Close" @click="closeMessage">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</template>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="sample09.js"></script>
+</body>
+</html>
