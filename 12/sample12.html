@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sample12</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container" id="app">
+
+    <button @click="showData">show colors from server</button>
+
+    <div class="row">
+        <ul v-if="showData">
+            <li v-for="color in colors" v-text="color" :style="{'color': color}"></li>
+        </ul>
+        <ul>
+            <li v-for="skill in skills" v-text="skill"> </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="row">
+        <form @submit.prevent="register" v-show="showForm">
+            <legend>register user</legend>
+
+            <div class="form-group">
+                <!--<label for="fname">full name</label>-->
+                <input class="form-control" name="full_name" placeholder="enter your name" v-model="firstName">
+                <input class="form-control" name="full_name" placeholder="enter your last name" v-model="lastName">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="alert alert-success" v-show="alertOk">
+            <strong>Congratulation Dear {{ firstName}} {{ lastName }} </strong> <br> you are member of site now
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="sample12.js"></script>
+</body>
+</html>
